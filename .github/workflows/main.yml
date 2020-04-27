@@ -13,9 +13,9 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: WillAbides/exampleaction@v1.0.1
+      uses: WillAbides/exampleaction@master
       with:
-        who-to-greet: 'Mona the Octocat'
+        allow_first_release: "true"
     # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+    - name: the output
+      run: echo "The output was ${{ steps.hello.outputs.next_version }}"
