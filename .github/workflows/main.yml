@@ -11,8 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: WillAbides/exampleaction2@master
+        id: omg
         with:
           who-to-greet: somebody
+      - run: echo "output is ${{ steps.omg.outputs.time }}"
   hello_world_job:
     runs-on: ubuntu-latest
     name: A job to say hello
@@ -22,6 +24,7 @@ jobs:
       uses: WillAbides/exampleaction@master
       with:
         allow_first_release: "true"
+  
     # Use the output from the `hello` step
     - name: the output
       run: echo "The output was ${{ steps.hello.outputs.next_version }}"
