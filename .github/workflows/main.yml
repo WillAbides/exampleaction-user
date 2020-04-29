@@ -7,6 +7,12 @@ on:
     types:
       - labeled
 jobs:
+  example2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: WillAbides/exampleaction2@master
+        with:
+          who-to-greet: somebody
   hello_world_job:
     runs-on: ubuntu-latest
     name: A job to say hello
