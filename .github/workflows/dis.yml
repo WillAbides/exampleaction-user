@@ -1,1 +1,10 @@
+on: 
+  repository_dispatch:
+    types: [foo, opened, deleted]
+jobs:
+  disjob:
+    runs-on: ubuntu-18.04
+    steps:
+      - run: echo you did a dispatch
 
+    
