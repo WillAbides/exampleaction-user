@@ -1,0 +1,6 @@
+on: [push]
+jobs:
+  dat:
+    runs-on: ubuntu-18.04
+    steps:
+      - run: curl -X 'POST' -d '{"event_type":"foo"}' -H 'Accept: application/vnd.github.v3+json' -H 'Content-Type: application/json' -H 'User-Agent: octo-cli/development' -H "Authorization: token ${{ github.token }}" 'https://api.github.com/repos/WillAbides/exampleaction-user/dispatches'
